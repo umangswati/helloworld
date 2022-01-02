@@ -1,22 +1,21 @@
-pipeline {
-  agent any 
-      stages {
-         stage('Build') { 
-           steps {
-              sh 'Building the job' 
-             }
-      }
-        stage('Test'){
-           steps {
-              sh 'Testing the job'
-              
-           }
-      }
-        stage('Deploy') {
-           steps {
-             sh 'Deploying the job'
-            }
+pipeline { 
+agent any 
+    stages { 
+        stage ('Build') { 
+ 
         }
-  }
-}
-
+        stage ('Test') { 
+        
+        }
+        stage ('QA') { 
+        
+        }
+        stage ('Deploy') { 
+        
+        }
+        stage ('Monitor') { 
+ 
+        }
+ 
+    }           
+ }
