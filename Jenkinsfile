@@ -10,7 +10,7 @@ agent any
         stage ('Test') { 
             steps {
                 echo 'Testing the job'
-                sh `whoami`
+                sh "whoami"
                 sh "./create_qmgr.pl"
             }
         }
