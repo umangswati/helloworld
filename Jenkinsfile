@@ -18,6 +18,7 @@ agent any
         stage ('Deploy') { 
             steps {
                 echo 'Deploying the job'
+                sh "sudo su - mqm strmqm TEST1"
             }
         
         }
