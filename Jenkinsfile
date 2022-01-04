@@ -11,7 +11,7 @@ agent any
             steps {
                 echo 'Testing the job'
                 sh "whoami"
-                sh "./create_qmgr.pl"
+                sh "sudo su - mqm ./create_qmgr.pl"
             }
         }
         
