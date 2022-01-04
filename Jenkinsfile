@@ -18,7 +18,7 @@ agent any
         stage ('Deploy') { 
             steps {
                 echo 'Deploying the job'
-                sh "sudo su - mqm `strmqm TEST1`"
+                sh "sudo su - mqm "/opt/mqm/bin/strmqm TEST1""
             }
         
         }
