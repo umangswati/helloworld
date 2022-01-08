@@ -4,7 +4,7 @@ pipeline {
         stage('Example') {
             steps {
                 echo 'Hello World'
-                echo 'yum install java'
+                sh 'yum install java'
             }
         }
     }
