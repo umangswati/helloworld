@@ -1,28 +1,19 @@
-pipeline { 
-agent any 
-    stages { 
-        stage ('Build') { 
+pipeline {
+    agent none 
+    stages {
+        stage('Example Build') {
+            agent { docker 'maven:3.8.1-adoptopenjdk-11' } 
             steps {
-                echo 'Building the job'
-            }
- 
-        }
-        stage ('Test') { 
-            steps {
-                echo 'Testing the job'
-                sh "whoami"
-                sh "sudo su - mqm ./create_qmgr.pl"
+                echo 'Hello, Maven'
+                sh 'mvn --version'
             }
         }
-        
-        stage ('Deploy') { 
+        stage('Example Test') {
+            agent { docker 'openjdk:8-jre' } 
             steps {
-                echo 'Deploying the job'
-                
+                echo 'Hello, JDK'
+                sh 'java -version'
             }
-        
         }
-        
- 
-    }           
- }
+    }
+}
