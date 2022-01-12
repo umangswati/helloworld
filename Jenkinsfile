@@ -1,11 +1,12 @@
 pipeline {
-    agent { label 'master' }
+    agent any
     
     stages {
         stage('Example') {
             steps {
                 echo 'Hello World'
                 echo "This is ${env.BUILD_NUMBER}"
+                sh 'ansible -version'
                
                 echo "This is ${env.NODE_NAME}"
             }
