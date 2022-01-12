@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 echo "This is ${env.BUILD_NUMBER}"
-                sh 'ansible -version'
+                sh 'ansible --version'
                
                 echo "This is ${env.NODE_NAME}"
             }
