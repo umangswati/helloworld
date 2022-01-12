@@ -7,7 +7,7 @@ pipeline {
                 echo 'Hello World'
                 echo "This is ${env.BUILD_NUMBER}"
                
-                echo "This is $NODE_NAME"
+                echo "This is ${env.NODE_NAME}"
             }
         }
     }
