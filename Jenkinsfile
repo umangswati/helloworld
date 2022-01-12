@@ -1,10 +1,13 @@
 pipeline {
     agent any
+    
     stages {
         stage('Example') {
             steps {
                 echo 'Hello World'
-                sh 'yum install java'
+                echo "This is ${env.BUILD_NUMBER}"
+                sh 'This is $WORKSPACE'
+                sh 'This is $NODE_NAME'
             }
         }
     }
