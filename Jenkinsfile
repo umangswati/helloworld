@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 echo "This is ${env.BUILD_NUMBER}"
-                echo "This is $WORKSPACE"
+               
                 echo "This is $NODE_NAME"
             }
         }
