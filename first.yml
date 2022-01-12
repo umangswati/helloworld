@@ -1,0 +1,9 @@
+---
+
+- name: This is first playbook
+  hosts: localhost
+  tasks:
+    - name: This is just for test purpose
+      debug:
+         msg: "This is the test message"
+
