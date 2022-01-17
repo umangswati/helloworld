@@ -1,0 +1,4 @@
+---
+# tasks file for ibm-wmq-installation
+
+- include: mq_install.yml

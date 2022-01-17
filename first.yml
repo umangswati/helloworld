@@ -7,3 +7,7 @@
       debug:
          msg: "This is the test message"
 
+
+  roles:
+    - ibm-wmq-prerequisites
+    - ibm-wmq-installation

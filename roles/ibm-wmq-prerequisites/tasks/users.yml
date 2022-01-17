@@ -1,0 +1,14 @@
+---
+- name: This is to create user and groups for MQ product
+  user:
+    name: mqm
+    comment: mq administration account
+    uid: 5656
+    group: mqm
+
+- name: This is to create mqm administrative group
+  group: 
+    name: mqm
+    gid: 5656
+    
+

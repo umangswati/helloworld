@@ -1,0 +1,25 @@
+---
+
+- name: Tis module is used to install MQ binaries
+  unarchive:
+       src: /tmp/IBM_MQ_9.2.0_LINUX_X86-64_TRIAL.tar.gz
+       dest: /tmp
+
+- shell: "/tmp/MQServer/mqlicense.sh -accept"
+
+
+- rpm_key:
+    state: present
+    key: https://rpms.remirepo.net/RPM-GPG-KEY-remi
+
+- name: This is ised to install MQ binaries
+  yum:
+    name: 
+      - "/tmp/MQServer/MQSeriesServer-9.2.0-0.x86_64.rpm"
+      - "/tmp/MQServer/MQSeriesRuntime-9.2.0-0.x86_64.rpm"
+      - "/tmp/MQServer/MQSeriesGSKit-9.2.0-0.x86_64.rpm"
+    state: present
+  
+
+
+
