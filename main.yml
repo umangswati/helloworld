@@ -1,0 +1,42 @@
+---
+- name: This is first test playbook
+  hosts: localhost
+
+  vars_prompt:
+ 
+     - name: username
+       prompt: What is your username?
+       private: no
+
+     - name: password
+       prompt: What is your password?
+
+
+  tasks:
+  - name:  This is first task of my playbook
+    ansible.builtin.debug:
+        msg: This is first resource message in tasks
+
+
+  - name: Check python version on this machine
+    shell: python3 --version
+    register: python_version
+
+
+  - name: Print python version on this machine
+    debug:
+       var:  python_version.stdout 
+
+  - name: Ensure apache is at the latest version
+    ansible.builtin.yum:
+       name: httpd
+       state: latest
+
+  - name: Ensure apache is running
+    ansible.builtin.service:
+       name: httpd
+       state: started
+
+
+  - name: get service facts
+    service_facts:
